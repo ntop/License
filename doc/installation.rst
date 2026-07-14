@@ -139,5 +139,5 @@ Accepted PRODUCT_EDITION values per product:
    
 For more information about using the LM with ntop applications see:
 
- - `ntopng <https://www.ntop.org/guides/ntopng/adding_a_license/index.html#using-the-license-manager>`_
+ - `ntopng <https://www.ntop.org/guides/ntopng/versions_and_licensing.html#using-the-license-manager>`_
  - `nProbe <https://www.ntop.org/guides/nprobe/introduction.html#using-the-license-manager>`_

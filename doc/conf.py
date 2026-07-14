@@ -38,7 +38,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'ntop License Manaher'
-copyright = u'2023-25, ntop'
+copyright = u'2023-26, ntop'
 author = u'ntop'
 
 # The version info for the project you're documenting, acts as replacement for
