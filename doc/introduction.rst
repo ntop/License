@@ -1,7 +1,7 @@
 Introduction
 ============
 
-In addition to standard per-server licenses, it is possible to centralize licenses on a license manager (LM) application that is part of the `ntop-license` package.
+In addition to standard per-server licenses, it is possible to centralize licenses on a license manager (LM) application that is part of the `ntop-license-manager` package.
 
 The LM is a software application that allos you to deploy your ntop licenses on a central location to which ntop apps will connect to. Differently from 'classic' ntop licenses  that are bound to a host permanent systemId (based on the CPU and MAC address of the management interface), LM licenses are about to the host where the LM runs regardless of the applications (e.g. ntopng) are running.
 
@@ -21,7 +21,7 @@ Using the License Manager
 
 The LM needs to be installed on a network host of your LAN that is stable from the systemId standpoint (i.e. installing it on a container is probably not a good idea) meaning that the host and the management NIC of the host where the LM run should not change.
 
-The LM application is installed by the ```ntop-license``` package that runs it as a service. This package is available from a dedicated repository that needs to be enabled with the credentials provided by ntop (see the Installation section). The first thing you need to do is to install your licenses in the LM license directory that is typically /etc/ntop/license_manager. Note that the LM licenses are different from standard licenses, so make sure you ask for/install LM licenses as others will not be recognized. Once the LM is started, it listens on a network for applications willing to validate licenses.
+The LM application is installed by the ```ntop-license-manager``` package that runs it as a service. This package is available from a dedicated repository that needs to be enabled with the credentials provided by ntop (see the Installation section). The first thing you need to do is to install your licenses in the LM license directory that is typically /etc/ntop/license_manager. Note that the LM licenses are different from standard licenses, so make sure you ask for/install LM licenses as others will not be recognized. Once the LM is started, it listens on a network for applications willing to validate licenses.
 
 In order to use the LM for validating the license you
 

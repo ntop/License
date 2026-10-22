@@ -28,7 +28,7 @@ To enable it:
 .. code:: bash
 
    apt-get update
-   apt-get install ntop-license
+   apt-get install ntop-license-manager
 
 The package installs the LM as a service.
 
@@ -49,7 +49,10 @@ If the file is missing or invalid, the application is not able to use the LM. Wh
 Windows
 -------
 
-At the moment, Windows systems are not supported by the LM.
+ntop applications running on Windows can use the LM as clients and validate their licenses.
+The LM server instead cannot run on Windows: it must be installed on a Linux host.
+
+On Windows, the ```licensemgr.bin``` client file must be placed in the working directory of the application.
 
 
 Configuration
