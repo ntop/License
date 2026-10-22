@@ -21,11 +21,12 @@ Using the License Manager
 
 The LM needs to be installed on a network host of your LAN that is stable from the systemId standpoint (i.e. installing it on a container is probably not a good idea) meaning that the host and the management NIC of the host where the LM run should not change.
 
-The LM application is installed by the ```ntop-license``` package that runs it as a service. The first thing you need to do is to install your licenses in the LM license directory that is typically /etc/ntop/license_manager. Note that the LM licenses are different from standard licenses, so make sure you ask for/install LM licenses as others will not be recognized. Once the LM is started, it listens on a network for applications willing to validate licenses.
+The LM application is installed by the ```ntop-license``` package that runs it as a service. This package is available from a dedicated repository that needs to be enabled with the credentials provided by ntop (see the Installation section). The first thing you need to do is to install your licenses in the LM license directory that is typically /etc/ntop/license_manager. Note that the LM licenses are different from standard licenses, so make sure you ask for/install LM licenses as others will not be recognized. Once the LM is started, it listens on a network for applications willing to validate licenses.
 
 In order to use the LM for validating the license you
 
 - do not need to install a nProbe standard license
+- need to install the customer-specific client file /etc/licensemgr.bin provided by ntop on the host running nProbe
 - you need to start nProbe adding the following CLI option ```--license-mgr <license manager>.conf```. Example ```nprobe -i eth1 --license-mgr <license manager>.conf```.
 
 If license validation is successfull, nProbe will be permanently connected to the LM meaning that the used license cannot be used by another nProbe application. As soon as the application terminates the licenses can now be used by another nProbe instance eventually running on a different host.
