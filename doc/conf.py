@@ -37,7 +37,7 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = u'ntop License Manaher'
+project = u'ntop License Manager'
 copyright = u'2023-26, ntop'
 author = u'ntop'
 

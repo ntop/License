@@ -1,29 +1,30 @@
-Installation and Configuration
-==============================
+LM Installation and Configuration
+=================================
 
 The LM package is distributed through a dedicated, password-protected repository that is not enabled by default.
 Please read the section below to enable it.
 
+Ubuntu/Debian LM Installation
+-----------------------------
 
-Enabling the LM Repository
---------------------------
+On the host that will run the LM server, install the ntop repository as described on `packages.ntop.org <https://packages.ntop.org>`_.
 
-On the machine that will run the LM server, install the ntop repository as described on `packages.ntop.org <https://packages.ntop.org>`_.
-
-The file /etc/apt/sources.list.d/ntop-lm.list is installed with the LM repository commented out:
+The file /etc/apt/sources.list.d/ntop-lm.list is installed with the LM repository commented out. Below you can see examples for Ubuntu 24.04 LTS:
 
 .. code:: text
 
    $ cat /etc/apt/sources.list.d/ntop-lm.list
-   # If you want to user the license manager uncomment the line below
-   # and replace USER and PASSWORD with the credentials you have received
-   #deb [signed-by=/usr/share/keyrings/ntop-archive-keyring.gpg] https://USER:PASSWORD@packages.ntop.org/apt-lm/24.04/ x64/
+   # If you want to use the license manager uncomment the line below
+   # and read https://www.ntop.org/guides/license/installation.html
+   #deb [signed-by=/usr/share/keyrings/ntop-archive-keyring.gpg] https://packages.ntop.org/apt-lm/24.04/ x64/
 
-To enable it:
+To enable it (as root) do:
 
 1. Uncomment the ```deb``` line.
-2. Replace USER and PASSWORD with the credentials you have received from ntop.
-3. Update the package list and install the LM:
+2. Edit ``/etc/apt/auth.conf`` (or create if not existing) and add a line
+   ``machine packages.ntop.org/apt-lm/24.04/ login YOUR_USERNAME password YOUR_PASSWORD``   
+   where you replace YOUR_USERNAME and YOUR_PASSWORD with the credentials you have received from ntop.
+3. ``chmod 600 /etc/apt/auth.conf`` and ``chown root:root /etc/apt/auth.conf``
 
 .. code:: bash
 
@@ -32,9 +33,25 @@ To enable it:
 
 The package installs the LM as a service.
 
+Rocky/RedHat-based Distributions LM Installation
+------------------------------------------------
 
-LM Client File (licensemgr.bin)
--------------------------------
+On the host that will run the LM server, install the ntop repository as follows:
+
+``curl https://packages.ntop.org/centos-lm/ntop-lm.repo > /etc/yum.repos.d/ntop-lm.repo`` (Nightly)
+
+or
+
+``curl https://packages.ntop.org/centos-stable-lm/ntop-stable-lm.repo > /etc/yum.repos.d/ntops-stable-lm.repo`` (Stable)
+
+Then edit the installed files replacing YOUR_USERNAME and YOUR_PASSWORD with the credentials you have received from ntop.
+
+
+LM Client File
+--------------
+
+.. note::
+   The licensemgr.bin is per organization and not per host, so all the hosts belonging to the same compnay using the LM will use the same licensemgr.bin file
 
 In addition to the LM licenses, each customer receives from ntop a client file named ```licensemgr.bin``` that is specific to the company/customer using the LM.
 This file must be installed as /etc/licensemgr.bin on every host running an ntop application that validates its license with the LM (i.e. started with ```--license-mgr```).
@@ -44,7 +61,6 @@ If the file is missing or invalid, the application is not able to use the LM. Wh
 .. code:: text
 
    This LM client is licensed to: My Company
-
 
 Windows
 -------
