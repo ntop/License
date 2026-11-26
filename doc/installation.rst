@@ -194,7 +194,7 @@ Accepted PRODUCT_EDITION values per product:
 
  - nprobe: ```pro```, ```enterprise_s```, ```enterprise_m```, ```enterprise_l```, ```enterprise_xl```
  - ntopng: ```pro```, ```enterprise_m```, ```enterprise_l```, ```enterprise_xl```, ```enterprise_xxl```
- - n2disk: ```1g```, ```5g```, ```19g```
+ - n2disk: ```1g```, ```5g```, ```10g```, ```100g```
  - cento: ```s```, ```m```, ```l```, ```xl```, ```xxl```
    
 For more information about using the LM with ntop applications see:
