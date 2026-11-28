@@ -1,0 +1,25 @@
+{
+ "sidebar": [
+  {
+   "text": "User's Guide",
+   "items": [
+    {
+     "text": "Introduction",
+     "link": "/introduction"
+    },
+    {
+     "text": "LM Installation and Configuration",
+     "link": "/installation"
+    },
+    {
+     "text": "Managing Licenses",
+     "link": "/licenses"
+    },
+    {
+     "text": "Frequently Asked Questions",
+     "link": "/faq"
+    }
+   ]
+  }
+ ]
+}
